@@ -1,0 +1,16 @@
+# Build artifacts
+stint-busfs
+src/*.o
+*.o
+*.a
+*.so
+
+# Editor
+*.swp
+*.swo
+tags
+
+# System
+.vscode/
+__pycache__/
+*.pyc
