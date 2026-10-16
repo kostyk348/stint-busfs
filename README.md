@@ -1,5 +1,9 @@
 # stint-busfs
 
+[![Release](https://img.shields.io/github/v/release/kostyk348/stint-busfs?sort=semver&color=blue)](https://github.com/kostyk348/stint-busfs/releases)
+[![License](https://img.shields.io/badge/license-Apache-2.0-green)](https://github.com/kostyk348/stint-busfs/blob/master/LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/kostyk348/stint-busfs?branch=master)](https://github.com/kostyk348/stint-busfs/commits/master)
+
 **D-Bus as a Virtual Filesystem** — mount D-Bus at `/bus/` and poke it with `ls`, `cat`, `echo`.
 
 ```
@@ -40,6 +44,7 @@ Dependencies: `fuse3`, `dbus-1`, `openssl`.
 ```bash
 ./stint-busfs /tmp/busfs
 # in another terminal:
+
 ls /tmp/busfs/session
 cat /tmp/busfs/session/org.freedesktop.DBus/introspect
 ```
