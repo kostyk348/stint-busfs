@@ -1,0 +1,32 @@
+[package]
+name = "stint-busfs"
+version = "0.2.0"
+edition = "2021"
+rust-version = "1.80"
+description = "D-Bus as a Virtual Filesystem — mount a bus at /bus and poke it with ls, cat, echo. DSO contracts + SHA-256 provenance chain."
+license = "Apache-2.0"
+repository = "https://github.com/kostyk348/stint-busfs"
+readme = "README.md"
+keywords = ["dbus", "fuse", "filesystem", "ipc", "linux"]
+categories = ["command-line-utilities", "filesystem", "os::linux-apis"]
+
+[lib]
+name = "busfs"
+path = "src/lib.rs"
+
+[[bin]]
+name = "stint-busfs"
+path = "src/main.rs"
+
+[dependencies]
+fuser = { version = "0.15", default-features = false }
+zbus = { version = "4", default-features = false, features = ["blocking", "async-io"] }
+zvariant = "4"
+sha2 = "0.10"
+clap = { version = "4", features = ["derive"] }
+libc = "0.2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true

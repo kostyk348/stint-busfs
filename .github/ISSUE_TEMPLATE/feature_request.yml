@@ -1,0 +1,27 @@
+name: Feature request
+description: A new virtual file, bus capability or contract
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The task this solves
+      description: What artifact do you need to produce, and why does the current set of kinds not cover it?
+    validations:
+      required: true
+  - type: textarea
+    id: spec-shape
+    attributes:
+      label: Proposed behaviour
+      description: What paths/files should exist and what cat/echo on them should do.
+    validations:
+      required: true
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Constraints
+      options:
+        - label: Works (or degrades cleanly) in demo mode without a bus
+          required: true
+        - label: Provenance records the new operations
+          required: true

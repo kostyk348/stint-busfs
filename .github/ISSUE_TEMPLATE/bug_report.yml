@@ -1,0 +1,31 @@
+name: Bug report
+description: Something renders wrong, crashes or is not deterministic
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Include the exact spec JSON and the (wrong) artifact.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      placeholder: spec2artifact 1.0.0
+    validations:
+      required: true
+  - type: checkboxes
+    id: repro
+    attributes:
+      label: Reproducibility
+      options:
+        - label: The same spec reproduces this on every run (it is not flaky)
+          required: true
